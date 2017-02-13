@@ -1,25 +1,110 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-VD-UZO">
+                                <rect key="frame" x="67" y="30" width="240" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-rf-3Z2">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cCd-9A-aKL"/>
+                                            <constraint firstAttribute="width" constant="80" id="fct-x4-yzt"/>
+                                        </constraints>
+                                        <state key="normal" title="推流">
+                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" title="推流">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pmd-h2-s0F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgI-B2-J5i">
+                                        <rect key="frame" x="80" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="CpZ-Ug-dza"/>
+                                            <constraint firstAttribute="width" constant="80" id="H8M-QB-Ekb"/>
+                                        </constraints>
+                                        <state key="normal" title="点播">
+                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" title="点播">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUC-Ku-6vS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-rG-hki">
+                                        <rect key="frame" x="160" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="4GV-dL-2n2"/>
+                                            <constraint firstAttribute="height" constant="40" id="kUE-BI-1uu"/>
+                                        </constraints>
+                                        <state key="normal" title="直播">
+                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" title="直播">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PI2-V1-OSH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96672771909693977" green="0.96672771909693977" blue="0.96672771909693977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SZl-rG-hki" secondAttribute="trailing" id="02M-55-lkY"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="leading" secondItem="6IK-VD-UZO" secondAttribute="leading" id="6lJ-4z-T8t"/>
+                                    <constraint firstItem="IgI-B2-J5i" firstAttribute="centerY" secondItem="6IK-VD-UZO" secondAttribute="centerY" id="Mam-10-gQc"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="top" secondItem="SZl-rG-hki" secondAttribute="top" id="QKq-qw-4EW"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="baseline" secondItem="SZl-rG-hki" secondAttribute="baseline" id="azf-gf-11i"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="baseline" secondItem="IgI-B2-J5i" secondAttribute="baseline" id="d2c-Fn-6eH"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="firstBaseline" secondItem="IgI-B2-J5i" secondAttribute="baseline" id="d4h-Gy-2CZ"/>
+                                    <constraint firstItem="NNz-rf-3Z2" firstAttribute="baseline" secondItem="SZl-rG-hki" secondAttribute="firstBaseline" id="fAI-gv-gS9"/>
+                                    <constraint firstAttribute="height" constant="40" id="n7b-80-ElE"/>
+                                    <constraint firstItem="IgI-B2-J5i" firstAttribute="centerX" secondItem="6IK-VD-UZO" secondAttribute="centerX" id="sWo-vz-uev"/>
+                                    <constraint firstAttribute="width" constant="240" id="ubZ-Om-V7c"/>
+                                    <constraint firstItem="SZl-rG-hki" firstAttribute="leading" secondItem="IgI-B2-J5i" secondAttribute="trailing" id="zoQ-eC-CUC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6IK-VD-UZO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cjp-c1-c1M"/>
+                            <constraint firstItem="6IK-VD-UZO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="WJz-gO-RbK"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="livePlayBtn" destination="SZl-rG-hki" id="HV2-Wk-Y4c"/>
+                        <outlet property="orderPlayBtn" destination="IgI-B2-J5i" id="xvy-4C-CAM"/>
+                        <outlet property="playBtnContainView" destination="6IK-VD-UZO" id="YsP-sf-dkY"/>
+                        <outlet property="pushStreamBtn" destination="NNz-rf-3Z2" id="nUF-EH-y7W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.5" y="136.5"/>
         </scene>
     </scenes>
 </document>
