@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,10 +33,10 @@
                                             <constraint firstAttribute="width" constant="80" id="fct-x4-yzt"/>
                                         </constraints>
                                         <state key="normal" title="推流">
-                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.88440454006195068" green="0.88437807559967041" blue="0.88439303636550903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" title="推流">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pmd-h2-s0F"/>
@@ -45,10 +49,10 @@
                                             <constraint firstAttribute="width" constant="80" id="H8M-QB-Ekb"/>
                                         </constraints>
                                         <state key="normal" title="点播">
-                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.88440454006195068" green="0.88437807559967041" blue="0.88439303636550903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" title="点播">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUC-Ku-6vS"/>
@@ -61,17 +65,17 @@
                                             <constraint firstAttribute="height" constant="40" id="kUE-BI-1uu"/>
                                         </constraints>
                                         <state key="normal" title="直播">
-                                            <color key="titleColor" red="0.90714222690000001" green="0.90714222690000001" blue="0.90714222690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.88440454006195068" green="0.88437807559967041" blue="0.88439303636550903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" title="直播">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="playButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PI2-V1-OSH"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96672771909693977" green="0.96672771909693977" blue="0.96672771909693977" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.95817649364471436" green="0.95814776420593262" blue="0.95816397666931152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="SZl-rG-hki" secondAttribute="trailing" id="02M-55-lkY"/>
                                     <constraint firstItem="NNz-rf-3Z2" firstAttribute="leading" secondItem="6IK-VD-UZO" secondAttribute="leading" id="6lJ-4z-T8t"/>
@@ -87,24 +91,54 @@
                                     <constraint firstItem="SZl-rG-hki" firstAttribute="leading" secondItem="IgI-B2-J5i" secondAttribute="trailing" id="zoQ-eC-CUC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skV-bD-fEg">
+                                <rect key="frame" x="0.0" y="78" width="375" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0Q-Gv-Pxa">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-3Q-9GR">
+                                        <rect key="frame" x="8" y="-1" width="129" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="1Ue-gu-C3f"/>
+                                            <constraint firstAttribute="width" constant="129" id="eGO-wI-wtD"/>
+                                        </constraints>
+                                        <state key="normal" title="开启"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jKe-3Q-9GR" firstAttribute="centerY" secondItem="a0Q-Gv-Pxa" secondAttribute="centerY" constant="-4" id="23E-T8-ZKA"/>
+                                    <constraint firstAttribute="height" constant="50" id="P7h-1y-phQ"/>
+                                    <constraint firstItem="jKe-3Q-9GR" firstAttribute="leading" secondItem="a0Q-Gv-Pxa" secondAttribute="leading" constant="8" id="fJE-CP-Z2b"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="skV-bD-fEg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1A8-hP-lhx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a0Q-Gv-Pxa" secondAttribute="bottom" id="8ne-Ob-CfE"/>
                             <constraint firstItem="6IK-VD-UZO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cjp-c1-c1M"/>
+                            <constraint firstAttribute="trailing" secondItem="skV-bD-fEg" secondAttribute="trailing" id="Em5-Q4-vlU"/>
                             <constraint firstItem="6IK-VD-UZO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="WJz-gO-RbK"/>
+                            <constraint firstItem="skV-bD-fEg" firstAttribute="top" secondItem="6IK-VD-UZO" secondAttribute="bottom" constant="8" id="ZFR-QV-7uK"/>
+                            <constraint firstItem="a0Q-Gv-Pxa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g2S-HG-amo"/>
+                            <constraint firstItem="a0Q-Gv-Pxa" firstAttribute="top" secondItem="skV-bD-fEg" secondAttribute="bottom" constant="8" id="iyh-UA-O5G"/>
+                            <constraint firstAttribute="trailing" secondItem="a0Q-Gv-Pxa" secondAttribute="trailing" id="mPn-V9-cZ6"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="livePlayBtn" destination="SZl-rG-hki" id="HV2-Wk-Y4c"/>
                         <outlet property="orderPlayBtn" destination="IgI-B2-J5i" id="xvy-4C-CAM"/>
                         <outlet property="playBtnContainView" destination="6IK-VD-UZO" id="YsP-sf-dkY"/>
                         <outlet property="pushStreamBtn" destination="NNz-rf-3Z2" id="nUF-EH-y7W"/>
+                        <outlet property="videoView" destination="skV-bD-fEg" id="yYj-D6-5e8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.5" y="136.5"/>
+            <point key="canvasLocation" x="138.40000000000001" y="136.28185907046478"/>
         </scene>
     </scenes>
 </document>

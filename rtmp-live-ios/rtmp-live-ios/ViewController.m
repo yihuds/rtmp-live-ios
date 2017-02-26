@@ -8,12 +8,28 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import <AVFoundation/AVFoundation.h>
 
-@property (weak, nonatomic) IBOutlet UIView *playBtnContainView;
-@property (weak, nonatomic) IBOutlet UIButton *pushStreamBtn;
-@property (weak, nonatomic) IBOutlet UIButton *orderPlayBtn;
-@property (weak, nonatomic) IBOutlet UIButton *livePlayBtn;
+@interface ViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView     *playBtnContainView;
+@property (weak, nonatomic) IBOutlet UIButton   *pushStreamBtn;
+@property (weak, nonatomic) IBOutlet UIButton   *orderPlayBtn;
+@property (weak, nonatomic) IBOutlet UIButton   *livePlayBtn;
+@property (weak, nonatomic) IBOutlet UIView     *videoView;
+
+
+@property (nonatomic, strong) AVCaptureSession           *session;
+@property (nonatomic, strong) dispatch_queue_t           videoQueue;
+@property (nonatomic, strong) dispatch_queue_t           AudioQueue;
+
+@property (nonatomic, strong) AVCaptureDeviceInput       *captureDeviceInput;
+@property (nonatomic, strong) AVCaptureVideoDataOutput   *videoOutput;
+@property (nonatomic, strong) AVCaptureConnection        *videoConnection;
+@property (nonatomic, strong) AVCaptureConnection        *audioConnection;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
+
+@property (nonatomic, strong) NSMutableData              *data;
 
 @end
 
