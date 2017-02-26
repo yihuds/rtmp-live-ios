@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import "Define.h"
 
 @interface ViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate>
 
@@ -19,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIView     *videoView;
 @property (weak, nonatomic) IBOutlet UIButton *startOrStopBtn;
 
-@property (nonatomic, assign) NSInteger         currentSelectPlayIndex;
+@property (nonatomic, assign) NSInteger                 currentSelectPlayIndex;
+@property (nonatomic, assign) SelectStartOrStopBtnIndex currentSelectIndex;
+
 
 @property (nonatomic, strong) AVCaptureSession           *session;
 @property (nonatomic, strong) dispatch_queue_t           videoQueue;
@@ -33,12 +36,15 @@
 
 @property (nonatomic, strong) NSMutableData              *data;
 
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _session = [AVCaptureSession new];
     
     [self initView];
 }
@@ -60,13 +66,29 @@
 }
 
 - (IBAction)startOrStopOnClick:(id)sender {
-    if (_currentSelectPlayIndex == 0) {
+    NSLog(@"startOrStopOnClick title = %@", self.startOrStopBtn.currentTitle);
+    
+    if ([self.startOrStopBtn.currentTitle isEqualToString:START_BTN_TITLE]) {
+        [self.startOrStopBtn setTitle:STOP_BTN_TITLE forState:UIControlStateNormal];
+        _currentSelectIndex = SelectStartIndex;
+    } else if ([self.startOrStopBtn.currentTitle isEqualToString:STOP_BTN_TITLE]) {
+        [self.startOrStopBtn setTitle:START_BTN_TITLE forState:UIControlStateNormal];
+        _currentSelectIndex = SelectStopIndex;
+    }
+    
+    if (_currentSelectPlayIndex == 1) {
+        if (_currentSelectIndex == SelectStartIndex) { //开启
+            [self startRecord];
+        } else { //停止
+            [self stopRecord];
+        }
+    } else if (_currentSelectPlayIndex ==2) {
         
-    } else if (_currentSelectPlayIndex ==1) {
-        
-    } else if (_currentSelectPlayIndex == 2) {
+    } else if (_currentSelectPlayIndex == 3) {
         
     }
+    
+    
 }
 
 - (void)initView {
@@ -78,6 +100,64 @@
     
 }
 
+- (void) startRecord {
+    [self setupVideoRecord];
+}
+
+- (void) stopRecord {
+    [_session stopRunning];
+}
+
+#pragma mark - 设置音频录制
+- (void) setupAudioRecord {
+    
+}
+
+#pragma mark - 设置视频录制
+- (void) setupVideoRecord {
+    if ([_session canSetSessionPreset:AVCaptureSessionPreset1920x1080]) {
+        _session.sessionPreset = AVCaptureSessionPreset1920x1080;
+    }
+    
+    NSError *error = nil;
+    AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDeviceInput *videoInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
+    if (error) {
+        NSLog(@"Error getting video input device:%@",error.description);
+        
+    }
+    if ([_session canAddInput:videoInput]) {
+        [_session addInput:videoInput];
+    }
+    
+    _videoQueue = dispatch_queue_create("VideoCaptureQueue", DISPATCH_QUEUE_SERIAL);
+    _videoOutput = [AVCaptureVideoDataOutput new];
+    [_videoOutput setSampleBufferDelegate:self queue:_videoQueue];
+    
+    NSDictionary *captureSettings = @{(NSString*)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
+    _videoOutput.videoSettings = captureSettings;
+    _videoOutput.alwaysDiscardsLateVideoFrames = YES;
+    
+    if ([_session canAddOutput:_videoOutput]) {
+        [_session addOutput:_videoOutput];
+    }
+    
+    _videoConnection = [_videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    
+    [_session startRunning];
+    
+    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [[_previewLayer connection] setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    
+    _previewLayer.frame = CGRectMake(0, 0, self.videoView.frame.size.height, self.videoView.frame.size.height);
+    [self.videoView.layer addSublayer:_previewLayer];
+
+}
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    
+}
 
 
 @end

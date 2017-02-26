@@ -26,6 +26,7 @@
 		1B18C9B01E518E2A00795287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B18C9B31E518E2A00795287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B18C9B51E518E2A00795287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7BE3741E62FAAD00B3CB7D /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				1B18C9B21E518E2A00795287 /* LaunchScreen.storyboard */,
 				1B18C9B51E518E2A00795287 /* Info.plist */,
 				1B18C9A41E518E2900795287 /* Supporting Files */,
+				1B7BE3741E62FAAD00B3CB7D /* Define.h */,
 			);
 			path = "rtmp-live-ios";
 			sourceTree = "<group>";

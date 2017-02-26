@@ -36,5 +36,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>应用程序需要您的同意才能正常访问摄像头</string>
+	<key>NSCameraUsageDescription</key>
+	<string>cameraDesciption</string>
+	<key>NSContactsUsageDescription</key>
+	<string>contactsDesciption</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>microphoneDesciption</string>
 </dict>
 </plist>
